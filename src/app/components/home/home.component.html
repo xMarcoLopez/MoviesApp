@@ -1,0 +1,29 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Movies App</h1>
+        <p class="lead">Esta es una aplicación de películas</p>
+    </div>
+</div>
+
+<div class="container">
+
+    <app-galeria [peliculas]="cartelera | slice:0:6" titulo="Películas en cartelera"></app-galeria>
+    <app-loading *ngIf="loading"></app-loading>
+    <app-galeria [peliculas]="populares | slice:0:6" titulo="Películas más populares"></app-galeria>
+    <app-loading *ngIf="loading"></app-loading>
+    <app-galeria [peliculas]="popularesTom | slice:0:6" titulo="Películas de Tom Cruise"></app-galeria>
+    <app-loading *ngIf="loading"></app-loading>
+</div>
+
+
+<!-- <div class="card-columns m-5 animated fadeIn fast">
+    <div *ngFor="let pelicula of nuevasPeliculas" class="card">
+        <img [src]="'http://image.tmdb.org/t/p/w300' + pelicula.poster_path" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{pelicula.original_title}}</h5>
+            <p class="card-text">
+                {{pelicula.overview}}
+            </p>
+        </div>
+    </div>
+</div> -->
